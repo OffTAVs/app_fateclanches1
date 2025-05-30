@@ -17,9 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="#990000"
-            android:scaleType="center"
+            android:scaleType="fitStart"
             android:contentDescription="Logo Fatec"
-            android:src="@drawable/fatec_logo" />
+            android:src="@drawable/logo_fatec_" />
 
 
         <TextView
