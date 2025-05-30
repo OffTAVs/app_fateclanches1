@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2">
+
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#990000"
+            android:scaleType="center"
+            android:contentDescription="Logo Fatec"
+            android:src="@drawable/fatec_logo" />
+
+        <TextView
+            android:text="Lanches Fatec"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#005F63"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Faça seu cadastro:"
+            android:padding="5dp"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:text="Email:"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_margin="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/emailEditText"
+            android:hint="fulano.silva@fatec.sp.gov.br"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:padding="10dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:text="Nome:"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_margin="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/nomeEditText"
+            android:hint="Fulano da Silva"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:padding="10dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:text="Senha:"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:hint="*******"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:padding="10dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:text="Confirmar Senha:"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:hint="******"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:padding="10dp"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:text="Cadastrar"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#005F63"
+            android:textColor="#FFF" />
+
+        <TextView
+            android:text="Entrar com e-mail institucional"
+            android:textColor="#0000FF"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/fazerLoginTextView"
+            android:text="Fazer login"
+            android:textColor="#0000FF"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>
