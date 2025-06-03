@@ -14,7 +14,13 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="40dp"
+                android:background="#990000"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
                 android:background="#990000"
                 android:scaleType="fitStart"
                 android:contentDescription="Logo Fatec"
@@ -86,6 +92,8 @@
                 android:id="@+id/entrarButton"
                 android:text="Entrar"
                 android:layout_marginTop="16dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#005F63"

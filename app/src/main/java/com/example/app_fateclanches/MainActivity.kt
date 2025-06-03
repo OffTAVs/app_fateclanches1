@@ -12,6 +12,7 @@
     import androidx.appcompat.app.AppCompatActivity
     import androidx.core.view.ViewCompat
     import androidx.core.view.WindowInsetsCompat
+    import com.example.app_fateclanches.view.CadastroActivity
     import com.example.app_fateclanches.view.Home
 
     class MainActivity : AppCompatActivity() {
@@ -26,6 +27,7 @@
             textViewCadastro.setOnClickListener {
                 val intent = Intent(this, CadastroActivity::class.java)
                 startActivity(intent)
+                finish()
             }
 
 

@@ -6,7 +6,7 @@ import retrofit2.http.POST
 import retrofit2.http.PUT
 
 interface ServicoUsuario {
-
+/*
     @GET("contatos")
     fun getContatos(): Call<List<Contato>>
 
@@ -25,4 +25,6 @@ interface ServicoUsuario {
             Call<UploadResposta>
 
     data class UploadResposta(val nomeArquivo: String)
+
+ */
 }

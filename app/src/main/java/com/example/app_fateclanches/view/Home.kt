@@ -13,6 +13,10 @@ class Home : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
 
+        supportActionBar?.hide()
+        val nome = intent.extras?.getString("nome")
+
+
 
         /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
