@@ -18,7 +18,7 @@
         <activity android:name=".view.CadastroActivity"
             android:exported="false"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.Perfil$Perfil"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
