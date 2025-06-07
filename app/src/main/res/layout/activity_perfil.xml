@@ -39,8 +39,10 @@
             android:background="#990000"
             android:elevation="8dp"
             android:clipToPadding="false"
-            android:cardCornerRadius="12dp"
-            android:appCard
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FFFFFF"
+            android:padding="20dp"
         >
 
         <Button
