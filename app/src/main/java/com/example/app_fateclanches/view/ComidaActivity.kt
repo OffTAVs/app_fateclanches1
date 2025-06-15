@@ -1,13 +1,13 @@
 package com.example.app_fateclanches.view
-/*
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.app_fateclanches.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.app_fateclanches.adapter.ComidaAdapter
-import com.example.app_fateclanches.databinding.ActivityComidasBinding
+//import com.example.app_fateclanches.databinding.ActivityComidasBinding
 import com.example.app_fateclanches.models.Comida
-
+/*
 class ComidasActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityComidasBinding

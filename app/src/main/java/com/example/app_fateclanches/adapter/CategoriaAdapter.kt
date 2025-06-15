@@ -25,16 +25,18 @@ class CategoriaAdapter (private  val context: Context, private val listaCategori
         holder.imgCategoria.setImageResource(listaCategoria[position].img!!)
         holder.txtCategoria.text = listaCategoria[position].nome
 
-        /*
+/*
         // Clique para abrir ComidasActivity passando o nome da categoria
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ComidaAc::class.java)
             intent.putExtra("categoria", listaCategoria[position].nome)
             context.startActivity(intent)
         }
+        */
+
     }
-    */
-    }
+
+
 
     inner class CategoriaViewHolder(binding: CategoriaItemBinding): RecyclerView.ViewHolder(binding.root){
         val imgCategoria = binding.imgCategoria

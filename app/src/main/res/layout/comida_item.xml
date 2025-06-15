@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/fundo_item_comida"
+    android:weightSum="100">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="30"
+        android:src="@drawable/ic_perfil_navbar"
+        android:id="@+id/imgFotoComida"
+        android:contentDescription="foto comida"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="70"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/txtNomedaComida"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:textSize="15sp"
+            android:text="Nome da Comida"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:id="@+id/txtTelefoneContato"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:textSize="10sp"
+            android:text="12345-12345"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:textAlignment="center"
+
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

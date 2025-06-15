@@ -1,6 +1,6 @@
 
 package com.example.app_fateclanches.adapter
-/*
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -21,16 +21,16 @@ class ComidaAdapter(
     override fun getItemCount() = listaComida.size
 
     override fun onBindViewHolder(holder: ComidaViewHolder, position: Int) {
-        holder.imgComida.setImageResource(listaComida[position].img!!)
-        holder.txtComida.text = listaComida[position].nome
+        //holder.imgComida.setImageResource(listaComida[position].img!!)
+        //holder.txtComida.text = listaComida[position].nome
 
         // Aqui pode adicionar clique se quiser
         // holder.itemView.setOnClickListener { ... }
     }
 
     inner class ComidaViewHolder(binding: ComidaItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        val imgComida = binding.imgComida
-        val txtComida = binding.txtComida
+        //val imgComida = binding.imgComida
+        //val txtComida = binding.txtComida
     }
 }
-*/
+
