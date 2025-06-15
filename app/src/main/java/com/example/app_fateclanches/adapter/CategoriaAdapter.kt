@@ -1,29 +1,45 @@
 package com.example.app_fateclanches.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_fateclanches.databinding.CategoriaItemBinding
 import com.example.app_fateclanches.models.Categoria
+//import com.example.app_fateclanches.view.ComidaActivity
 
-class CategoriaAdapter (private  val context: Context, private val listaContato: MutableList<Categoria>):
+class CategoriaAdapter (private  val context: Context, private val listaCategoria: MutableList<Categoria>):
     RecyclerView.Adapter<CategoriaAdapter.CategoriaViewHolder>() {
 
-    inner class CategoriaViewHolder(binding: CategoriaItemBinding): RecyclerView.ViewHolder(binding.root){
 
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriaViewHolder {
-        TODO("Not yet implemented")
+        val itemCategoria = CategoriaItemBinding.inflate(LayoutInflater.from(context),parent,false)
+        return CategoriaViewHolder(itemCategoria)
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = listaCategoria.size
 
     override fun onBindViewHolder(holder: CategoriaViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.imgCategoria.setImageResource(listaCategoria[position].img!!)
+        holder.txtCategoria.text = listaCategoria[position].nome
+
+        /*
+        // Clique para abrir ComidasActivity passando o nome da categoria
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ComidaAc::class.java)
+            intent.putExtra("categoria", listaCategoria[position].nome)
+            context.startActivity(intent)
+        }
+    }
+    */
+    }
+
+    inner class CategoriaViewHolder(binding: CategoriaItemBinding): RecyclerView.ViewHolder(binding.root){
+        val imgCategoria = binding.imgCategoria
+        val txtCategoria = binding.txtCategoria
+
     }
 }
 
