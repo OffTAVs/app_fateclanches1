@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewCategorias"
+        android:id="@+id/recyclerViewComidas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -44,7 +44,7 @@
      android:id="@+id/txtTotal"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategorias"
+     app:layout_constraintTop_toBottomOf="@+id/recyclerViewComidas"
      android:layout_marginTop="10dp"
      android:text="Total:R$"
      android:textColor="@color/red"

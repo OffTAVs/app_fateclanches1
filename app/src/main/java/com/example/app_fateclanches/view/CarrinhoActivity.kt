@@ -15,106 +15,48 @@ import android.widget.Toast
 import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app_fateclanches.adapter.ComidaAdapter
+import com.example.app_fateclanches.api.UsuarioRetrofit
 import com.example.app_fateclanches.models.Comida
+import com.example.app_fateclanches.servico.ServicoUsuario
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-/*
+
 class CarrinhoActivity : AppCompatActivity() {
-    var listaComida:ArrayList<Comida> = ArrayList() //alterei String para contato
+    /*
 
-    lateinit var listComida:RecyclerView
-    lateinit var btnProximo:ImageButton
+    var listaComida: ArrayList<Comida> = ArrayList()
 
-    fun carregaContatos(){
-        val cliente = ClienteRetrofit.cliente.create(ServicoContatos::class.java)
-        cliente.getContatos().enqueue( object:Callback<List<Contato>>{
-            override fun onResponse(call: Call<List<Contato>>, response: Response<List<Contato>>) {
-                if(response.isSuccessful){
-                    listaContatos = response.body() as ArrayList<Contato>
-                    val adapter = ContatoAdapter(listaContatos)
-                    listContatos.adapter = adapter
-                    listContatos.layoutManager = LinearLayoutManager(this@MainActivity)
-                }
-                else{
-                    Log.e("Erro ao carregar",response.message())
-                }
-            }
-
-            override fun onFailure(call: Call<List<Contato>>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        } )
-    }
+    private lateinit var listaComida: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        listContatos = findViewById(R.id.listContatos)
-        btnNovoContato = findViewById(R.id.btnNovoContato)
-        btnNovoContato.setOnClickListener { novoContato() }
 
-    }
-
-    override fun onResume() {
-        super.onResume()
-        carregaContatos()
-    }
-
-    private fun novoContato() {
-        val intent=Intent(this,FormContatoActivity::class.java)
-        startActivity(intent)
-    }
-
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-
-        val adapter:ContatoAdapter = listContatos.adapter as ContatoAdapter
-
-        val contato = listaContatos.get(adapter.posicaoClicada)
-
-        if(item.itemId == R.id.menu_mapa){
-            val uri = Uri.parse("geo:0,0?q="+contato.endereco+"&z=18")
-            val intent = Intent(Intent.ACTION_VIEW,uri)
-            startActivity(intent)
-        }
-        else if(item.itemId == R.id.menu_telefone){
-            val uri = Uri.parse("tel:"+contato.telefone)
-            val intent = Intent(Intent.ACTION_VIEW,uri)
-            startActivity(intent)
-        }
-        else if(item.itemId == R.id.menu_email){
-            val uri = Uri.parse("mailto:"+contato.email)
-            val intent = Intent(Intent.ACTION_VIEW,uri)
-            startActivity(intent)
-        }
-        else if(item.itemId == R.id.menu_excluir){
-            val cliente = ClienteRetrofit.cliente.create(ServicoContatos::class.java)
-            cliente.excluiContato(contato._id!!).enqueue(object:Callback<Void>{
-                override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                    if (response.isSuccessful){
-                        carregaContatos()
+        fun carregaComidas() {
+            val comida = UsuarioRetrofit.usuario.create(ServicoUsuario::class.java)
+            comida.getComida().enqueue(object : Callback<List<Comida>> {
+                override fun onResponse(
+                    call: Call<List<Comida>>,
+                    response: Response<List<Comida>>
+                ) {
+                    if (response.isSuccessful) {
+                        listaComida = response.body() as ArrayList<Comida>
+                        val adapter = ComidaAdapter(listaComida)
+                        listComida.adapter = adapter
+                        listComida.layoutManager = LinearLayoutManager(this@CarrinhoActivity)
                     } else {
-                        Log.e("Erro na requisição", "onResponse: " + response.message())
-                        Toast.makeText(this@MainActivity, "Falha ao Excluir", Toast.LENGTH_LONG)
-                            .show()
+                        Log.e("Erro ao carregar", response.message())
                     }
                 }
 
-                override fun onFailure(call: Call<Void>, t: Throwable) {
-                    Toast.makeText(this@MainActivity, "Falha na requisição", Toast.LENGTH_LONG).show()
+                override fun onFailure(call: Call<List<Comida>>, t: Throwable) {
+                    TODO("Not yet implemented")
                 }
             })
         }
-
-        else if(item.itemId == R.id.menu_editar){
-            val intent:Intent = Intent(this, FormContatoActivity::class.java)
-            intent.putExtra("contato", contato)
-            startActivity(intent)
-        }
-
-
-        return true
     }
 }
-
- */
+*/
+}

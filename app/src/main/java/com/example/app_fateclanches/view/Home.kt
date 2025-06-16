@@ -2,6 +2,7 @@ package com.example.app_fateclanches.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.app_fateclanches.R
 import com.example.app_fateclanches.adapter.CategoriaAdapter
+import com.example.app_fateclanches.databinding.ActivityCarrinhoBinding
 import com.example.app_fateclanches.databinding.ActivityHomeBinding
 import com.example.app_fateclanches.models.Categoria
 
@@ -19,9 +21,13 @@ class Home : AppCompatActivity() {
     private lateinit var categoriaAdapter: CategoriaAdapter
     private val listaCategoria: MutableList<Categoria> = mutableListOf()
 
+    private lateinit var btnCarrinho:ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        btnCarrinho= findViewById(R.id.btnCarrinho)
+        btnCarrinho.setOnClickListener { novoProduto() }
 
         // ✅ Inicialização do ViewBinding
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -38,15 +44,16 @@ class Home : AppCompatActivity() {
 
         getCategorias()
 
-        /*
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        /*
 
         findViewById<ImageView>(R.id.nav_lanches).setOnClickListener {
-            startActivity(Intent(this, ComidasActivity::class.java).putExtra("categoria", "Lanches"))
+            startActivity(Intent(this, ComidaActivity::class.java).putExtra("categoria", "Lanches"))
         }
 
         findViewById<ImageView>(R.id.nav_bebidas).setOnClickListener {
@@ -60,8 +67,13 @@ class Home : AppCompatActivity() {
         findViewById<ImageView>(R.id.nav_perfil).setOnClickListener {
             startActivity(Intent(this, PerfilActivity::class.java))
         }
+*/
 
-         */
+    }
+
+    private fun novoProduto() {
+        val intent=Intent(this,CarrinhoActivity::class.java)
+        startActivity(intent)
     }
 
     private fun getCategorias() {

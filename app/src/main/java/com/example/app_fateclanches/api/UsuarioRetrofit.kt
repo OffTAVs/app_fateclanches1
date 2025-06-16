@@ -14,5 +14,14 @@ object UsuarioRetrofit {
             }
             return retrofit!!
         }
+    val comida:Retrofit
+        get(){
+            if(retrofit==null){
+                retrofit=Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
+            }
+            return retrofit!!
+        }
+
+
 
 }
