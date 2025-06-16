@@ -6,15 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_fateclanches.databinding.ComidaItemBinding
 import com.example.app_fateclanches.models.Comida
-import retrofit2.Callback
 
 import android.content.Context
-import okhttp3.internal.wait
 
-class ComidaAdapter(
+class CarrinhoAdapter(
     private val context: Context,
     private val listaCarrinho: MutableList<Comida>
-) : RecyclerView.Adapter<ComidaAdapter.ComidaViewHolder>() {
+) : RecyclerView.Adapter<CarrinhoAdapter.ComidaViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComidaViewHolder {

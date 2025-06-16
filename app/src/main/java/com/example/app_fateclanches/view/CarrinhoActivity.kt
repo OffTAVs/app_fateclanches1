@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_fateclanches.R
-import com.example.app_fateclanches.adapter.ComidaAdapter
+import com.example.app_fateclanches.adapter.CarrinhoAdapter
 import com.example.app_fateclanches.api.UsuarioRetrofit
 import com.example.app_fateclanches.models.Comida
 import com.example.app_fateclanches.servico.ServicoUsuario
@@ -35,7 +35,7 @@ class CarrinhoActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<Comida>>, response: Response<List<Comida>>) {
                 if (response.isSuccessful) {
                     listaCarrinho = response.body() as ArrayList<Comida>
-                    recyclerViewComida.adapter = ComidaAdapter(this@CarrinhoActivity, listaCarrinho)
+                    recyclerViewComida.adapter = CarrinhoAdapter(this@CarrinhoActivity, listaCarrinho)
                     recyclerViewComida.layoutManager = LinearLayoutManager(this@CarrinhoActivity)
                 } else {
                     Log.e("Erro ao carregar", response.message())
