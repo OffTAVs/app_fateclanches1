@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,47 +8,109 @@
     android:background="@drawable/fundo_item_comida"
     android:weightSum="100">
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_weight="30"
-        android:src="@drawable/ic_perfil_navbar"
-        android:id="@+id/imgFotoComida"
-        android:contentDescription="foto comida"
-        />
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        card_view:cardCornerRadius="12dp"
+        card_view:cardElevation="6dp">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="70"
-        android:orientation="vertical"
-        >
-
-        <TextView
-            android:id="@+id/txtNomedaComida"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="60"
-            android:textSize="15sp"
-            android:text="Nome da Comida"
-            android:textColor="@color/black"
-            android:padding="10dp"
-            android:textAlignment="center"
-            />
+            android:layout_height="wrap_content"
+            android:padding="8dp">
 
-        <TextView
-            android:id="@+id/txtTelefoneContato"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="40"
-            android:textSize="10sp"
-            android:text="12345-12345"
-            android:textColor="@color/black"
-            android:padding="10dp"
-            android:textAlignment="center"
+            <!-- Botão de fechar -->
+            <ImageView
+                android:id="@+id/btnFechar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="4dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                app:tint="@android:color/black" />
 
-            />
-    </LinearLayout>
+            <!-- Imagem do produto -->
+            <ImageView
+                android:id="@+id/imgProduto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/sobremesas" />
 
+            <!-- Nome e detalhes -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imgProduto"
+                android:layout_alignTop="@id/imgProduto"
+                android:layout_alignBottom="@id/imgProduto"
+                android:layout_toStartOf="@id/btnFechar"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bolo de Prestígio"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quantidade:"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
+
+                <LinearLayout
+                    android:id="@+id/layoutQuantidade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnMenos"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@android:drawable/ic_media_previous"
+                        android:background="?android:selectableItemBackground"
+                        android:contentDescription="Diminuir"
+                        app:tint="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txtQuantidade"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:gravity="center"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/btnMais"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@android:drawable/ic_input_add"
+                        android:background="?android:selectableItemBackground"
+                        android:contentDescription="Aumentar"
+                        app:tint="@android:color/black" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total: R$ 10,00"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
