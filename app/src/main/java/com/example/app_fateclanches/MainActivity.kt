@@ -39,7 +39,7 @@
                 val email = emailField.text.toString()
                 val senha = senhaField.text.toString()
 
-                if (email == "admin@exemplo.com" && senha == "123456") {
+                if (email == "admin" && senha == "123456") {
                     // Login correto: ir para próxima tela
                     val intent = Intent(this, Home::class.java)
                     startActivity(intent)

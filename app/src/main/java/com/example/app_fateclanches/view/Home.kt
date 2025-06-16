@@ -23,15 +23,18 @@ class Home : AppCompatActivity() {
 
     private lateinit var btnCarrinho:ImageButton
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        btnCarrinho= findViewById(R.id.btnCarrinho)
-        btnCarrinho.setOnClickListener { novoProduto() }
-
-        // ✅ Inicialização do ViewBinding
+        // Inicializa o ViewBinding e carrega o layout
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Agora é seguro acessar os elementos do layout
+        btnCarrinho = findViewById(R.id.btnCarrinho)
+        btnCarrinho.setOnClickListener { novoProduto() }
 
         supportActionBar?.hide()
         val nome = intent.extras?.getString("nome")
@@ -45,11 +48,7 @@ class Home : AppCompatActivity() {
         getCategorias()
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
         /*
 
         findViewById<ImageView>(R.id.nav_lanches).setOnClickListener {
