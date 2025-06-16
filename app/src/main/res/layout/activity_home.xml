@@ -50,6 +50,7 @@
         android:background="@mipmap/ic_btn_shop_round"
         android:backgroundTint="#990000"
         android:backgroundTintMode="add"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategorias"
         app:layout_constraintBottom_toTopOf="@+id/custom_nav_bar"
         app:layout_constraintEnd_toEndOf="parent"/>
 

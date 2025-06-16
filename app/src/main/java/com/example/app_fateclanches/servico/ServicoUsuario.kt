@@ -1,5 +1,6 @@
 package com.example.app_fateclanches.servico
 
+import com.example.app_fateclanches.models.Comida
 import com.example.app_fateclanches.models.Usuario
 import retrofit2.Call
 import retrofit2.http.Body
@@ -14,6 +15,10 @@ interface ServicoUsuario {
 
     @POST("usuarios")
     fun insereUsuarios(@Body usuario:Usuario): Call<Usuario>
+
+    @GET("lanches")
+    fun getLanche(): Call<List<Comida>>
+
     /*
      @GET("contatos")
     fun getContatos(): Call<List<Contato>>
