@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_fateclanches.databinding.CategoriaItemBinding
 import com.example.app_fateclanches.models.Categoria
-//import com.example.app_fateclanches.view.ComidaActivity
+import com.example.app_fateclanches.view.ComidasActivity
 
 class CategoriaAdapter (private  val context: Context, private val listaCategoria: MutableList<Categoria>):
     RecyclerView.Adapter<CategoriaAdapter.CategoriaViewHolder>() {
@@ -25,14 +25,11 @@ class CategoriaAdapter (private  val context: Context, private val listaCategori
         holder.imgCategoria.setImageResource(listaCategoria[position].img!!)
         holder.txtCategoria.text = listaCategoria[position].nome
 
-/*
-        // Clique para abrir ComidasActivity passando o nome da categoria
-        holder.itemView.setOnClickListener {
-            val intent = Intent(context, ComidaAc::class.java)
+        holder.imgCategoria.setOnClickListener {
+            val intent = Intent(context, ComidasActivity::class.java)
             intent.putExtra("categoria", listaCategoria[position].nome)
             context.startActivity(intent)
         }
-        */
 
     }
 

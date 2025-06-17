@@ -49,10 +49,10 @@ class Home : AppCompatActivity() {
 
 
 
-        /*
+
 
         findViewById<ImageView>(R.id.nav_lanches).setOnClickListener {
-            startActivity(Intent(this, ComidaActivity::class.java).putExtra("categoria", "Lanches"))
+            startActivity(Intent(this, ComidasActivity::class.java).putExtra("categoria", "Lanches"))
         }
 
         findViewById<ImageView>(R.id.nav_bebidas).setOnClickListener {
@@ -66,7 +66,8 @@ class Home : AppCompatActivity() {
         findViewById<ImageView>(R.id.nav_perfil).setOnClickListener {
             startActivity(Intent(this, PerfilActivity::class.java))
         }
-*/
+
+
 
     }
 

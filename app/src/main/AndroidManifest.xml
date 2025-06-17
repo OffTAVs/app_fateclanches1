@@ -15,6 +15,9 @@
         android:theme="@style/Theme.App_fateclanches"
         tools:targetApi="31">
         <activity
+            android:name=".view.ComidasActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.CarrinhoActivity"
             android:exported="false" />
         <activity
