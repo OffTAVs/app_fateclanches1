@@ -1,52 +1,65 @@
     package com.example.app_fateclanches
 
-    import android.annotation.SuppressLint
     import android.content.Intent
     import android.os.Bundle
-    import android.widget.Button
-    import android.widget.EditText
-    import android.widget.ImageButton
-    import android.widget.TextView
-    import android.widget.Toast
-    import androidx.activity.enableEdgeToEdge
+    import android.widget.*
     import androidx.appcompat.app.AppCompatActivity
-    import androidx.core.view.ViewCompat
-    import androidx.core.view.WindowInsetsCompat
+    import com.example.app_fateclanches.api.UsuarioRetrofit
+    import com.example.app_fateclanches.models.LoginRequest
+    import com.example.app_fateclanches.models.LoginResponse
+    import com.example.app_fateclanches.servico.ServicoUsuario
     import com.example.app_fateclanches.view.CadastroActivity
     import com.example.app_fateclanches.view.Home
+    import retrofit2.Call
+    import retrofit2.Callback
+    import retrofit2.Response
 
     class MainActivity : AppCompatActivity() {
-        @SuppressLint("MissingInflatedId")
+
+        lateinit var emailField: EditText
+        lateinit var senhaField: EditText
+        lateinit var loginButton: Button
+
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            enableEdgeToEdge()
             setContentView(R.layout.activity_main)
 
             val textViewCadastro = findViewById<TextView>(R.id.fazerCadastroTextView)
-
             textViewCadastro.setOnClickListener {
-                val intent = Intent(this, CadastroActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, CadastroActivity::class.java))
                 finish()
             }
 
-
-            val emailField = findViewById<EditText>(R.id.emailEditText)
-            val senhaField = findViewById<EditText>(R.id.senhaEditText)
-            val loginButton = findViewById<Button>(R.id.entrarButton)
+            emailField = findViewById(R.id.emailEditText)
+            senhaField = findViewById(R.id.senhaEditText)
+            loginButton = findViewById(R.id.entrarButton)
 
             loginButton.setOnClickListener {
                 val email = emailField.text.toString()
                 val senha = senhaField.text.toString()
 
-                if (email == "admin" && senha == "123456") {
-                    // Login correto: ir para próxima tela
-                    val intent = Intent(this, Home::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    Toast.makeText(this, "Login inválido", Toast.LENGTH_SHORT).show()
-                }
+                val request = LoginRequest(email, senha)
+
+                val servico = UsuarioRetrofit.usuario.create(ServicoUsuario::class.java)
+                servico.login(request).enqueue(object : Callback<LoginResponse> {
+                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                        if (response.isSuccessful) {
+                            val token = response.body()?.token ?: ""
+                            Toast.makeText(this@MainActivity, "Login OK!", Toast.LENGTH_SHORT).show()
+
+                            // Aqui você pode salvar o token com SharedPreferences, se quiser
+
+                            startActivity(Intent(this@MainActivity, Home::class.java))
+                            finish()
+                        } else {
+                            Toast.makeText(this@MainActivity, "Email ou senha inválidos", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                        Toast.makeText(this@MainActivity, "Erro na conexão: ${t.message}", Toast.LENGTH_SHORT).show()
+                    }
+                })
             }
         }
     }

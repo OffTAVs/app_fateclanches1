@@ -1,6 +1,8 @@
 package com.example.app_fateclanches.servico
 
 import com.example.app_fateclanches.models.Comida
+import com.example.app_fateclanches.models.LoginRequest
+import com.example.app_fateclanches.models.LoginResponse
 import com.example.app_fateclanches.models.Usuario
 import retrofit2.Call
 import retrofit2.http.Body
@@ -8,6 +10,7 @@ import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.Query
 
 interface ServicoUsuario {
 
@@ -18,6 +21,9 @@ interface ServicoUsuario {
 
     @GET("lanches")
     fun getLanche(): Call<List<Comida>>
+
+    @POST("usuarios/login")
+    fun login(@Body request: LoginRequest): Call<LoginResponse>
 
     /*
      @GET("contatos")
