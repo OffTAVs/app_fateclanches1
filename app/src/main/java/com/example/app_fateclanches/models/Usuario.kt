@@ -7,5 +7,4 @@ data class Usuario(
     val nome:String,
     val email:String,
     val senha:String,
-    val confirmarsenha:String,
 ): Serializable

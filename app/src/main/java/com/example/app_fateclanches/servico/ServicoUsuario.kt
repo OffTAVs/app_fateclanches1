@@ -13,7 +13,7 @@ interface ServicoUsuario {
 
 
 
-    @POST("usuarios")
+    @POST("usuarios/registrar")
     fun insereUsuarios(@Body usuario:Usuario): Call<Usuario>
 
     @GET("lanches")

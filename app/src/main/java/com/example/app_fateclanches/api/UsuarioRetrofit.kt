@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object UsuarioRetrofit {
-    val BASE_URL = "https://meuapp.com/api/"
+    val BASE_URL = "https://fateclanchesback.onrender.com/"
     private var retrofit:Retrofit?=null
 
     val usuario:Retrofit
