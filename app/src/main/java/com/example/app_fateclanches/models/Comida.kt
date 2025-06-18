@@ -4,7 +4,8 @@ import java.io.Serializable
 
 data class Comida(
     val nome: String,
-    val quantidade: Int,
+    val disponivel: Boolean,
     val preco: Double,
-    val imagem: Int
+    val imagemUrl: String,
+    val categoria: String
 ): Serializable

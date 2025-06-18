@@ -23,7 +23,6 @@ class CarrinhoAdapter(
     override fun getItemCount() = listaCarrinho.size
 
     override fun onBindViewHolder(holder: ComidaViewHolder, position: Int) {
-        holder.imgComida.setImageResource(listaCarrinho[position].imagem!!)
         holder.txtComida.text = this.listaCarrinho[position].nome
 
 

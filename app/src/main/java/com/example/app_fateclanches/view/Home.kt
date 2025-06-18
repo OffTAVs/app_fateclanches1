@@ -48,23 +48,20 @@ class Home : AppCompatActivity() {
         getCategorias()
 
 
-
-
-
         findViewById<ImageView>(R.id.nav_lanches).setOnClickListener {
-            startActivity(Intent(this, ComidasActivity::class.java).putExtra("categoria", "Lanches"))
+            startActivity(Intent(this, ComidasActivity::class.java).putExtra("categoria", "Lanche"))
         }
 
         findViewById<ImageView>(R.id.nav_bebidas).setOnClickListener {
-            startActivity(Intent(this, ComidasActivity::class.java).putExtra("categoria", "Bebidas"))
+            startActivity(Intent(this, ComidasActivity::class.java).putExtra("categoria", "Bebida"))
         }
 
         findViewById<ImageView>(R.id.nav_bomboniere).setOnClickListener {
-            startActivity(Intent(this, ComidasActivity::class.java).putExtra("categoria", "Bomboniere"))
+            startActivity(Intent(this, ComidasActivity::class.java).putExtra("categoria", "Acompanhamento"))
         }
 
         findViewById<ImageView>(R.id.nav_perfil).setOnClickListener {
-            startActivity(Intent(this, PerfilActivity::class.java))
+            startActivity(Intent(this, Home::class.java))
         }
 
 
@@ -77,13 +74,13 @@ class Home : AppCompatActivity() {
     }
 
     private fun getCategorias() {
-        val catergotia1 = Categoria(R.drawable.ic_lanches_navbar, "Lanches")
+        val catergotia1 = Categoria(R.drawable.ic_lanches_navbar, "Lanche")
         listaCategoria.add(catergotia1)
 
-        val catergotia2 = Categoria(R.drawable.ic_bebidas_navbar, "Bebidas")
+        val catergotia2 = Categoria(R.drawable.ic_bebidas_navbar, "Bebida")
         listaCategoria.add(catergotia2)
 
-        val catergotia3 = Categoria(R.drawable.ic_bomboniere_navbar, "Doces")
+        val catergotia3 = Categoria(R.drawable.ic_bomboniere_navbar, "Acompanhamento")
         listaCategoria.add(catergotia3)
 
         val catergotia4 = Categoria(R.drawable.ic_perfil_navbar, "Perfil")
