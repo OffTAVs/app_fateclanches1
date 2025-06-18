@@ -25,9 +25,9 @@
         android:id="@+id/categoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Escolha uma categoria:"
+        android:text="Menu de Lanches:"
         android:textSize="20dp"
-        android:gravity="start"
+        android:gravity="center"
         android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         app:layout_constraintTop_toBottomOf="@+id/LanchesFatec"
@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewCategorias"
+        android:id="@+id/recyclerViewMenuLanches"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
