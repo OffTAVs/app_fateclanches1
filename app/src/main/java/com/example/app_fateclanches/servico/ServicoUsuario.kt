@@ -11,6 +11,9 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Query
+import retrofit2.Call
+import retrofit2.http.GET
+
 
 interface ServicoUsuario {
 
@@ -24,6 +27,9 @@ interface ServicoUsuario {
 
     @POST("usuarios/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
+
+    @GET("api/produtos") // Ajuste conforme seu endpoint
+    fun listarProdutos(): Call<List<Produto>>
 
     /*
      @GET("contatos")
