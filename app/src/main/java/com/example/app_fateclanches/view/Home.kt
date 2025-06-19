@@ -61,7 +61,7 @@ class Home : AppCompatActivity() {
         }
 
         findViewById<ImageView>(R.id.nav_perfil).setOnClickListener {
-            startActivity(Intent(this, Home::class.java))
+            startActivity(Intent(this, PerfilActivity::class.java))
         }
 
 
