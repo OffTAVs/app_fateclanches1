@@ -74,7 +74,7 @@ class CarrinhoActivity : AppCompatActivity() {
 
                 // Limpar o carrinho
                 CarrinhoManager.itensCarrinho.clear()
-                finish() // Encerra a Activity ou redireciona para uma tela de sucesso
+              //  finish() // direcionara para a página de método de pagamento
             }
         }
 
