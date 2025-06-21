@@ -2,6 +2,7 @@ package com.example.app_fateclanches.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -23,6 +24,8 @@ class ComidasActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var categoria: String
+
+    private lateinit var btnCarrinho: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +75,14 @@ class ComidasActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.nav_perfil).setOnClickListener {
             startActivity(Intent(this, PerfilActivity::class.java).putExtra("categoria","Perfil"))
         }
-    }
 
+        // Agora é seguro acessar os elementos do layout
+        btnCarrinho = findViewById(R.id.btnCarrinho)
+        btnCarrinho.setOnClickListener { novoProduto() }
+    }
+    private fun novoProduto() {
+        val intent=Intent(this,CarrinhoActivity::class.java)
+        startActivity(intent)
+    }
 }
 
