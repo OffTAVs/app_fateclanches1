@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cinza_fundo"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- header fundo -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#990000"
+        android:contentDescription="@string/fundo_vermelho_fatec"
+        />
+
+    <!-- header logo -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#990000"
+        android:scaleType="fitStart"
+        android:contentDescription="@string/logo_fatec"
+        android:src="@drawable/logo_fatec_" />
+
+    <!-- título "Pagamentos" -->
+    <TextView
+        android:id="@+id/titulo_pagamentos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="@string/titulo_pagamentos"
+        android:textSize="40sp"
+        android:textColor="@color/verde_pagamento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- total do pedido -->
+    <TextView
+        android:id="@+id/total_pedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="@string/total_pedido"
+        android:textSize="25sp"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- insira seus dados -->
+    <TextView
+        android:id="@+id/inserir_dados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:text="@string/inserir_dados"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- criar menu suspenso "cartões salvos" -->
+
+    <TextView
+        android:id="@+id/cartoes_salvos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/cartoes_salvos" />
+
+        <EditText
+            android:hint="@string/cartoes_salvos"
+            android:autofillHints=""
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/inputs_arredondados"
+            android:inputType=""
+            android:padding="10dp"
+            android:paddingBottom="5dp" />
+
+    <!-- numero do cartão -->
+    <TextView
+        android:id="@+id/num_cartao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/num_cartao"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="247dp"/>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints=""
+            android:background="@drawable/inputs_arredondados"
+            android:hint="@string/hint_num_cartao"
+            android:inputType="number"
+            android:padding="10dp"
+            android:paddingBottom="5dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="266dp" />
+
+    <!-- nome do titular -->
+    <TextView
+        android:id="@+id/nome_cartao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/nome_cartao"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="247dp"/>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints=""
+            android:background="@drawable/inputs_arredondados"
+            android:hint="@string/hint_nome_cartao"
+            android:inputType="textNoSuggestions"
+            android:padding="10dp"
+            android:paddingBottom="5dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="266dp" />
+
+    <!-- validade do cartao -->
+    <TextView
+        android:id="@+id/validade_cartao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/validade_cartao"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="247dp"/>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints=""
+            android:background="@drawable/inputs_arredondados"
+            android:hint="@string/hint_validade_cartao"
+            android:inputType="textNoSuggestions"
+            android:padding="10dp"
+            android:paddingBottom="5dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="266dp" />
+
+    <!-- código de segurança CVV -->
+    <TextView
+        android:id="@+id/codigo_seguranca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/codigo_seguranca"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="247dp"/>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints=""
+            android:background="@drawable/inputs_arredondados"
+            android:hint="@string/hint_codigo_seguranca"
+            android:inputType="textNoSuggestions"
+            android:padding="5dp"
+            android:paddingBottom="5dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="266dp" />
+
+    <!-- botão de finalizar pedido -->
+    <Button
+        android:id="@+id/botao_finalizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/botao_finalizar"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_margin="15dp"
+        android:paddingVertical="0dp"
+        android:paddingHorizontal="40dp"
+        android:backgroundTint="@color/red">
+</LinearLayout>
