@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#B20000</color>
+    <color name="cinza_fundo">#F0F0F0</color>
+    <color name="cinza_borda">#B2B2B2</color>
+    <color name="verde_pagamento">#005C6D</color>
+    <color name="azul_compra_realizada">#00C1CF</color>
 </resources>
